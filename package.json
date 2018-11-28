@@ -4,11 +4,15 @@
   "description": "CLI tool to generate next-routes for Now 2.0",
   "license": "MIT",
   "scripts": {
-    "prepublishOnly": "yarn pkg",
+    "prepublishOnly": "yarn run pack",
     "bundle": "pkg dist/index.js -o packed/generate-now-routes --options no-warnings",
     "build": "ncc build src/index.js",
-    "pkg": "rm -rf packed && yarn build && yarn bundle"
+    "pack": "rm -rf packed && yarn build && yarn bundle"
   },
+  "files": [
+    "dist/index.js",
+    "packed/generate-now-routes"
+  ],
   "bin": {
     "generate-now-routes": "packed/generate-now-routes"
   }
