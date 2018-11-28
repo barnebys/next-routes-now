@@ -1,8 +1,13 @@
-#!/usr/bin/env node
 const fs = require("fs");
 const path = require("path");
 
 const args = process.argv.slice(2);
+
+if (args.length !== 2) {
+  console.log("Invalid number of arguments");
+  return;
+}
+
 const nextRoutesFile = path.resolve(process.cwd(), args[0]);
 const nowConfigFile = path.resolve(process.cwd(), args[1]);
 
