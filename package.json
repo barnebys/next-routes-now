@@ -1,17 +1,25 @@
 {
   "name": "next-routes-now",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "CLI tool to generate next-routes for Now 2.0",
   "license": "MIT",
-  "scripts": {
-    "prepublishOnly": "yarn run build",
-    "build": "ncc build lib/index.js"
-  },
-  "files": [
-    "dist/index.js",
-    "bin/generate-now-routes"
-  ],
+  "main": "lib/index.js",
   "bin": {
     "generate-now-routes": "bin/generate-now-routes"
+  },
+  "files": [
+    "lib/index.js",
+    "bin/generate-now-routes"
+  ],
+  "devDependencies": {
+    "next": "^7.0.2",
+    "next-routes": "^1.4.2",
+    "react": "^16.7.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
   }
 }
