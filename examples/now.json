@@ -6,11 +6,11 @@
     },
     {
       "src": "^\\/complex\\/([^\\/]+?)(?:\\/)?$",
-      "dest": "/complex?route=$0"
+      "dest": "/complex?route=$1"
     },
     {
       "src": "^\\/multi\\/([^\\/]+?)(?:\\/([^\\/]+?))?(?:\\/)?$",
-      "dest": "/multi?id=$0&slug=$1"
+      "dest": "/multi?id=$1&slug=$2"
     }
   ]
 }
