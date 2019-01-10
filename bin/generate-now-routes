@@ -1,2 +1,59 @@
 #!/usr/bin/env node
-require('../dist/index.js')
+
+const { join } = require("path");
+const fs = require("fs");
+const generator = require("../lib/index.js");
+
+const argv = require("minimist")(process.argv.slice(2), {
+  alias: {
+    h: "help",
+    v: "version",
+    A: "local-config"
+  },
+  default: {
+    A: "now.json"
+  },
+  boolean: ["help", "version"]
+});
+
+if (argv.help) {
+  console.log(`
+    Description
+
+    Usage
+      $ generate-now-routes <routes_file> [options]
+
+    Options
+      --help, -h          Display this message
+      --version, -v       Display version
+      --local-config, -A  Path to the local \`now.json\` file
+  `);
+  return process.exit(0);
+}
+
+if (argv.version) {
+  const pkg = require("../package.json");
+  console.log(`Version: ${pkg.version}`);
+  return process.exit(0);
+}
+
+const run = async () => {
+  try {
+    const files = [
+      ["routes", argv._[0]],
+      [`now.json`, argv["local-config"]]
+    ].map(([name, path]) => {
+      const relativePath = join(process.cwd(), path || "");
+      if (!(!!path && fs.existsSync(relativePath))) {
+        throw new Error(`Not a valid filepath [${name}]: ${path}`);
+      }
+      return relativePath;
+    });
+    await generator.buildAndUpdate(files[0], files[1]);
+  } catch (e) {
+    console.log(e.message);
+    return process.exit(1);
+  }
+};
+
+run();

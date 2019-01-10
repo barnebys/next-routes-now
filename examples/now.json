@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "src": "^\\/simple\\/route(?:\\/)?$",
+      "dest": "/simple"
+    },
+    {
+      "src": "^\\/complex\\/([^\\/]+?)(?:\\/)?$",
+      "dest": "/complex?route=$0"
+    },
+    {
+      "src": "^\\/multi\\/([^\\/]+?)(?:\\/([^\\/]+?))?(?:\\/)?$",
+      "dest": "/multi?id=$0&slug=$1"
+    }
+  ]
+}
