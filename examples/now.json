@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/_next/static/(.*)",
+      "dest": "/_next/static/$1",
+      "headers": {
+        "cache-control": "s-maxage=86400"
+      }
+    },
+    {
       "src": "^\\/simple\\/route(?:\\/)?$",
       "dest": "/simple"
     },
