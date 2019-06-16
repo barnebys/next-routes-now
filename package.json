@@ -3,6 +3,13 @@
   "version": "2.0.0",
   "description": "CLI tool to generate next-routes for Now 2.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barnebys/next-routes-now.git"
+  },
+  "bugs": {
+    "url": "http://github.com/barnebys/next-routes-now/issues"
+  },
   "main": "lib/index.js",
   "bin": {
     "generate-now-routes": "bin/generate-now-routes"
