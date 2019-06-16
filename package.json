@@ -1,6 +1,6 @@
 {
   "name": "next-routes-now",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "CLI tool to generate next-routes for Now 2.0",
   "license": "MIT",
   "main": "lib/index.js",
@@ -12,9 +12,9 @@
     "bin/generate-now-routes"
   ],
   "devDependencies": {
-    "next": "^7.0.2",
+    "next": "^8.1.0",
     "next-routes": "^1.4.2",
-    "react": "^16.7.0"
+    "react": "^16.8.6"
   },
   "engines": {
     "node": ">=8.0.0"
