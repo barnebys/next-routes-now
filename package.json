@@ -19,7 +19,7 @@
     "bin/generate-now-routes"
   ],
   "devDependencies": {
-    "next": "^8.1.0",
+    "next": "^9.3.3",
     "next-routes": "^1.4.2",
     "react": "^16.8.6"
   },
